@@ -17,24 +17,12 @@
     </style>
   </head>
   <body>
-    <webview id='appearin_webview' src='https://appear.in/rory-trivago' preload='webview-script.js' plugins></webview>
-
+    <a href="openAppear">Open Appear.in</a>
+    <a href="startScreenShare">Start Screen Sharing</a>
+    <a href="stopScreenShare">Stop Screen Sharing</a>
+    <a href="closeAppear">Close Appear.in</a>
     <script>
-      'use strict';
-      const webview = document.getElementById('appearin_webview');
-
-      webview.openDevTools();
-
-      webview.addEventListener('dom-ready', function() {
-        this.insertCSS('header.top-line{padding-left:76px;}div.content-wrapper{width:calc(100% - 65px);float:right;}');
-        // Focus on the room name input field
-        this.focus();
-        this.executeJavascript('document.querySelector("input.input--1ntNM.jstest-urlbar-input").focus();')
-      });
-      // Webview links that try to open in new window will open in default browser
-      webview.addEventListener('new-window', function(event) {
-        require('electron').shell.openExternal(event.url);
-      });
+      
     </script>
   </body>
 </html>
