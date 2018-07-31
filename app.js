@@ -4,7 +4,7 @@ const web = express();
 const R = require("rambdax");
 const spawn = require('child_process').spawn;
 
-app.get('/', (req, res) => res.render('index.html'))
+web.get('/', (req, res) => res.render('index.html'))
 web.get('/openAppear', openAppear);
 web.get('/startScreenShare', startScreenShare);
 web.get('/stopScreenShare', stopScreenShare);
