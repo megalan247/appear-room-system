@@ -1,0 +1,3 @@
+Start-Process -FilePath "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" -ArgumentList "--remote-debugging-port=9333 --user-data-dir=c:/screen1 --kiosk --new-window https://dakboard.com/app/screenPredefined?p=a1dcded12eedd09919c2ee3c240c9a97 --window-position=2560,0"
+
+Start-Process -FilePath "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" -ArgumentList "--user-data-dir=c:/screen2 --kiosk --new-window file://C:\appdata\appear-room-system\webcam.html --window-position=0,0"
