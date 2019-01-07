@@ -1,0 +1,20 @@
+include _layout/head.pug
+
+body
+    .row
+        h1 appear.in Room System
+        h3.roomname This room is assigned to Room: rory-trivago
+    .row
+        h3 Please enter the room name you wish to join: 
+        input.otherroom#otherroom(type='text', autofocus)
+    .row
+        a.item(onclick="goToRoom()") 
+            div.fas.fa-sign-in-alt.icon
+            div Join Another Room
+
+script.
+    function goToRoom() {
+        window.location.assign("openAppear/"+document.getElementById('otherroom').value);
+    }
+
+include _layout/footer.pug

@@ -1,0 +1,10 @@
+script.
+    function sendData(func) {
+        const Http = new XMLHttpRequest();
+        const url= 'http://' + window.location.hostname + ':3000/' + func;
+        Http.open("GET", url);
+        Http.send();
+        Http.onreadystatechange=(e)=>{
+          console.log(Http.responseText)
+        }
+    }
