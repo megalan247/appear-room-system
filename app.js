@@ -3,6 +3,7 @@ const express = require('express');
 const web = express();
 const R = require("rambdax");
 const spawn = require('child_process').spawn;
+require('dotenv').config()
 
 web.set('view engine', 'pug')
 web.use(express.static(__dirname + '/static'));

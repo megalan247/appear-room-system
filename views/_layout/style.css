@@ -1,3 +1,9 @@
+html {
+    background-image: url('/img/bg/1.jpg');
+    background-repeat: no-repeat;
+    background-size: fill;
+}
+
 body {
     text-align: center;
     font-family: 'Open Sans', sans-serif;
@@ -5,17 +11,16 @@ body {
 
 a {
     text-decoration: none;
-    color: black;
+    color: white;
 }
 
 .item {
     padding: 5vh;
     margin: 3vh;
-    border: 1px solid black;
-    display: inline-block;
+    border: 1px solid white;
     user-select: none;
     text-align: center;
-    border-radius: 25%;
+    display: block;
 }
 
 .icon {
@@ -24,9 +29,8 @@ a {
 }
 
 .roomname {
-    margin: auto;
     overflow: ellipsis;
-    text-align: center;
+    color: white;
 }
 
 .hidden {
@@ -66,4 +70,34 @@ a {
 .otherroom {
     font-size: 10vh;
     text-align: center;
+}
+
+.box {
+    color: white;
+    width: 70vw;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.controls {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 50%;
+}
+
+.clock {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 50%;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black
+}
+
+.time {
+    font-size: 10vw;
+}
+
+.date {
+
 }

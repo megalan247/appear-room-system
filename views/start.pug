@@ -1,16 +1,17 @@
 include _layout/head.pug
 
 body
-    .row
-        h1 appear.in Room System
-        h3.roomname This room is assigned to Room: rory-trivago
-    .row
-        a.item(href='openAppear/rory-trivago') 
-            div.fas.fa-home.icon
-            div Join Room rory-trivago
-        a.item(href='otherRoom') 
-            div.fas.fa-sign-in-alt.icon
-            div Join Another Room
+    .box
+        .clock
+            .time 00:00
+            .date Sat 27 Test 2008
+        .controls
+            a.item(href='openAppear/rory-trivago') 
+                div.fas.fa-home.icon
+                div Join Room rory-trivago
+            a.item(href='otherRoom') 
+                div.fas.fa-sign-in-alt.icon
+                div Join Another Room
 
 
 include _layout/footer.pug
