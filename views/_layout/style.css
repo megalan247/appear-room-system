@@ -50,6 +50,7 @@ a {
     border-radius: 5px;   
     background: #d3d3d3;
     outline: none;
+  }
   
   .slider::-webkit-slider-thumb {
     -webkit-appearance: none;
