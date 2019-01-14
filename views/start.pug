@@ -13,22 +13,4 @@ body
                 div.fas.fa-sign-in-alt.icon
                 div Join Another Room
 
-script.
-    function formatReadableDate() {
-        var d = new Date(),
-        minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
-        hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
-        months = ['January','February','March','April','May','June','July','August','September','October','November','December'],
-        days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-        var readableDate = days[d.getDay()]+', '+months[d.getMonth()]+' '+d.getDate()+' '+d.getFullYear();
-        var readableTime = hours+':'+minutes;
-        document.getElementById('date').innerHTML = readableDate;
-        document.getElementById('time').innerHTML = readableTime;
-        
-    }
-
-    window.onload = function() {            
-        setInterval("formatReadableDate()",500)
-    }
-
 include _layout/footer.pug
