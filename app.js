@@ -167,5 +167,5 @@ async function setSysVolume(req, res) {
 }
 
 function openChrome() {
-    var prc = spawn('C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',  ['--kiosk', '--app=https://dakboard.com/app/screenPredefined?p=a1dcded12eedd09919c2ee3c240c9a97', '--auto-select-desktop-capture-source="' + process.env.SCREEN_NAME + '"', '--remote-debugging-port=9222', '--window-position=' + process.env.X_POS + ', 0'], { windowsVerbatimArguments: true });
+    var prc = spawn('C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',  ['--kiosk', '--app=https://dakboard.com/app/screenPredefined?p=a1dcded12eedd09919c2ee3c240c9a97', '--auto-select-desktop-capture-source="' + process.env.SCREEN_NAME + '"', '--remote-debugging-port=9222', '--window-position=' + process.env.X_POS + ',0'], { windowsVerbatimArguments: true });
 }
