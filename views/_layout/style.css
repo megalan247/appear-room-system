@@ -1,13 +1,37 @@
 html {
-    background-image: url('/img/bg/1.jpg');
+    background-image: url('/img/bg/2.jpg');
     background-repeat: no-repeat;
-    background-size: fill;
+    background-size: cover;
 }
 
 body {
     text-align: center;
     font-family: 'Open Sans', sans-serif;
     font-weight: 700;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+}
+
+
+header>img {
+    position: fixed;
+    height: 5vh;
+    left: 2vw;
+    top: 2vh;
+}
+
+header>.room_name {
+    font-size: 4vh;
+    color: white;
+    position: fixed;
+    right: 2vh;
+    padding: 0;
+    margin: 0;
+    top: 0.5vh;
 }
 
 a {
@@ -22,6 +46,7 @@ a {
     user-select: none;
     text-align: center;
     display: block;
+    font-size: 2vh;
 }
 
 .half {
@@ -45,48 +70,47 @@ a {
 
 .slider {
     -webkit-appearance: none;
-    width: 100%;
-    height: 15px;
-    border-radius: 5px;   
-    background: #d3d3d3;
+    margin: 5vh;
+    height: 5vh;  
+    background: transparent;
     outline: none;
+    border: 1px solid white;
   }
   
 .slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 25px;
-    height: 25px;
-    border-radius: 50%; 
-    background: #4CAF50;
+    width: 15px;
+    height: 5vh; 
+    background: white;
     cursor: pointer;
   }
   
 .slider::-moz-range-thumb {
     width: 25px;
     height: 25px;
-    border-radius: 50%;
-    background: #4CAF50;
+    background: white;
     cursor: pointer;
 }
 
 .otherroom {
     font-size: 7vh;
     text-align: center;
-    width: 100%;
+    width: 90%;
+    margin: 0 3vh;
+    border: 1px solid white;
+    background-color: transparent;
+    color: white;
 }
 
 .box {
     color: white;
     width: 70vw;
-    margin: auto;
     display: flex;
-    justify-content: space-between;
-    align-self: center;
 }
 
 .controls {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(17, 17, 17, 0.5);
     width: 50%;
 }
 
@@ -96,13 +120,15 @@ a {
     flex-direction: column;
     width: 50%;
     background-color: rgba(255, 255, 255, 0.8);
-    color: black
+    color: rgba(0, 0, 0, 0.8);
 }
+
 
 .time {
     font-size: 10vw;
 }
 
 .date {
-
+    font-weight: 400;
+    font-size: 3vh;
 }

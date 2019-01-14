@@ -29,14 +29,18 @@ openChrome();
 async function openAppear(req, res) {
     try {
         // connect to endpoint
-        let client = await CDP();
-        // extract domains
-        const {Network, Page, Runtime} = client;
-        // enable events then start!
-        await Network.enable();
-        await Page.enable();
-        await Page.navigate({url: 'https://appear.in/' + req.params.roomName});
-        await Page.loadEventFired();
+
+        if(process.env.DEBUG != "Y") {
+            let client = await CDP();
+            // extract domains
+            const {Network, Page, Runtime} = client;
+            // enable events then start!
+            await Network.enable();
+            await Page.enable();
+            await Page.navigate({url: 'https://appear.in/' + req.params.roomName});
+            await Page.loadEventFired();
+        }
+
         res.render("meeting", {name: req.params.roomName});
         
     } catch (err) {
@@ -139,13 +143,16 @@ async function stopScreenShare(req, res) {
 async function closeAppear(req, res) {
     try {
         // connect to endpoint
-        let client = await CDP();
-        // extract domains
-        const {Input, Network, Page, Runtime} = client;
-        // enable events then start!
-        await Network.enable();
-        await Page.enable();
-        await Page.navigate({url: 'https://dakboard.com/app/screenPredefined?p=a1dcded12eedd09919c2ee3c240c9a97'});
+        if(process.env.DEBUG != "Y") {
+            let client = await CDP();
+            // extract domains
+            const {Input, Network, Page, Runtime} = client;
+            // enable events then start!
+            await Network.enable();
+            await Page.enable();
+            await Page.navigate({url: 'https://dakboard.com/app/screenPredefined?p=a1dcded12eedd09919c2ee3c240c9a97'});    
+        }
+
         res.redirect("/");
     } catch (err) {
         console.error(err);
@@ -167,5 +174,8 @@ async function setSysVolume(req, res) {
 }
 
 function openChrome() {
-    var prc = spawn('C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',  ['--kiosk', '--app=https://dakboard.com/app/screenPredefined?p=a1dcded12eedd09919c2ee3c240c9a97', '--auto-select-desktop-capture-source="' + process.env.SCREEN_NAME + '"', '--remote-debugging-port=9222', '--window-position=' + process.env.X_POS + ',0'], { windowsVerbatimArguments: true });
+    if(process.env.DEBUG != "Y") {
+        var prc = spawn('C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',  ['--kiosk', '--app=https://dakboard.com/app/screenPredefined?p=a1dcded12eedd09919c2ee3c240c9a97', '--auto-select-desktop-capture-source="' + process.env.SCREEN_NAME + '"', '--remote-debugging-port=9222', '--window-position=' + process.env.X_POS + ',0'], { windowsVerbatimArguments: true });
+    }
+    
 }

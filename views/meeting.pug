@@ -8,15 +8,16 @@ body
             .date#date Sat 27 Test 2008
         .controls
             .row
-                h1.roomname Welcome to Room: #{name}
+                h1.roomname Welcome to Room: 
+                h2 #{name}
             .row
                 a.item(onclick="sendData('startScreenShare');") 
                     div.fas.fa-desktop.icon
                     div Toggle Screen Sharing
             .row
                 a.item(href="/closeAppear") Close appear.in
-                label Volume
-                input#slider.slider(type="range", min="0", max="100", value="50", onchange="sendData('setVol/' + document.getElementById('slider').value);")
+                //- label Volume
+                //- input#slider.slider(type="range", min="0", max="100", value="50", onchange="sendData('setVol/' + document.getElementById('slider').value);")
 
 
 
