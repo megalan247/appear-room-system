@@ -1,26 +1,32 @@
 include _layout/head.pug
 
 body
-    .row
-        h1.roomname Welcome to Room: #{name}
-    .row
-        a.item.hidden(onclick="sendData('openAppear');") Open appear.in
-        a.item(onclick="sendData('startScreenShare');") 
-            div.fas.fa-desktop.icon
-            div Toggle Screen Sharing
+
+    .box
+        .clock
+            .time#time 00:00
+            .date#date Sat 27 Test 2008
+        .controls
+            .row
+                h1.roomname Welcome to Room: #{name}
+            .row
+                a.item(onclick="sendData('startScreenShare');") 
+                    div.fas.fa-desktop.icon
+                    div Toggle Screen Sharing
+
+            .row    
+                a.item.half(onclick="sendData('toggleMute');")
+                    div.fas.fa-microphone-slash.icon
+                    div Toggle Microphone Mute
+
+                a.item.half(onclick="sendData('toggleCam');")
+                    div.fas.fa-video-slash.icon
+                    div Toggle Camera Mute
+            .row
                 
-        a.item(onclick="sendData('toggleMute');")
-            div.fas.fa-microphone-slash.icon
-            div Toggle Microphone Mute
+                a.item(href="/closeAppear") Close appear.in
 
-        a.item(onclick="sendData('toggleCam');")
-            div.fas.fa-video-slash.icon
-            div Toggle Camera Mute
-    .row
-        
-        a.item(href="/closeAppear") Close appear.in
-
-        input#slider.slider(type="range", min="0", max="100", value="50", onchange="sendData('setVol/' + document.getElementById('slider').value);")
+                input#slider.slider(type="range", min="0", max="100", value="50", onchange="sendData('setVol/' + document.getElementById('slider').value);")
 
 
 
