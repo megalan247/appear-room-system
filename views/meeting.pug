@@ -15,6 +15,7 @@ body
                     div Toggle Screen Sharing
             .row
                 a.item(href="/closeAppear") Close appear.in
+                label Volume
                 input#slider.slider(type="range", min="0", max="100", value="50", onchange="sendData('setVol/' + document.getElementById('slider').value);")
 
 

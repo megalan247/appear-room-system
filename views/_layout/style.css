@@ -45,14 +45,14 @@ a {
 
 .slider {
     -webkit-appearance: none;
-    width: 20%;
+    width: 100%;
     height: 15px;
     border-radius: 5px;   
     background: #d3d3d3;
     outline: none;
   }
   
-  .slider::-webkit-slider-thumb {
+.slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
     width: 25px;
