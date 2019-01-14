@@ -62,17 +62,18 @@ a {
     cursor: pointer;
   }
   
-  .slider::-moz-range-thumb {
+.slider::-moz-range-thumb {
     width: 25px;
     height: 25px;
     border-radius: 50%;
     background: #4CAF50;
     cursor: pointer;
-  }
+}
 
 .otherroom {
-    font-size: 10vh;
+    font-size: 7vh;
     text-align: center;
+    width: 100%;
 }
 
 .box {
