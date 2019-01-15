@@ -20,7 +20,8 @@ body
 
 script.
     function goToRoom() {
-        window.location.assign("openAppear/"+document.getElementById('otherroom').value);
+        var b64 = window.btoa(document.getElementById('otherroom').value);
+        window.location.assign("openAppear/"+b64);
     }
 
 include _layout/footer.pug

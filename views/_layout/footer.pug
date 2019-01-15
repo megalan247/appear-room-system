@@ -1,7 +1,8 @@
 script.
     function sendData(func) {
+        var b64 = window.btoa(func);
         const Http = new XMLHttpRequest();
-        const url= 'http://' + window.location.hostname + ':3000/' + func;
+        const url= 'http://' + window.location.hostname + ':3000/' + b64;
         Http.open("GET", url);
         Http.send();
         Http.onreadystatechange=(e)=>{

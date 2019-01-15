@@ -6,11 +6,17 @@ body
             .time#time 00:00
             .date#date Sat 27 Test 2008
         .controls
-            a.item(href='openAppear/' + name) 
+            a.item(onClick="goToRoom()") 
                 div.fas.fa-home.icon
                 div Join appear.in Room: #{name}
             a.item(href='otherRoom') 
                 div.fas.fa-sign-in-alt.icon
                 div Join Another appear.in Room
+
+script.
+    function goToRoom() {
+        var b64 = window.btoa("#{name}");
+        window.location.assign("openAppear/"+b64);
+    }
 
 include _layout/footer.pug

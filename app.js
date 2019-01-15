@@ -29,19 +29,20 @@ openChrome();
 async function openAppear(req, res) {
     try {
         // connect to endpoint
-
+        var buf = Buffer.from(req.params.roomName, 'base64');
         if(process.env.DEBUG != "Y") {
+            
             let client = await CDP();
             // extract domains
             const {Network, Page, Runtime} = client;
             // enable events then start!
             await Network.enable();
             await Page.enable();
-            await Page.navigate({url: 'https://appear.in/' + req.params.roomName});
+            await Page.navigate({url: 'https://appear.in/' + buf.toString()});
             await Page.loadEventFired();
         }
 
-        res.render("meeting", {name: req.params.roomName});
+        res.render("meeting", {name: buf.toString()});
         
     } catch (err) {
         console.error(err);
